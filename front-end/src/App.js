@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import ClientesList from "./Components/ClientesList";
+import NavigationBar from "./Components/NavigationBar";
+import UserInfo from "./Components/UserInfo";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-[#FF9671] min-h-screen flex flex-col">
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route exact path="/" element={<ClientesList />} />
+          <Route
+            path="/ver/:clienteId"
+            element={
+              <div className="flex-1 flex justify-center items-center">
+                <UserInfo />
+              </div>
+            }
+          />
+          {/* Nueva ruta para mostrar todos los datos del usuario */}
+        </Routes>
+      </Router>
     </div>
   );
 }

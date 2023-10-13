@@ -97,8 +97,6 @@ router.delete("/deleteUser/:id", deleteUser);
  *         schema:
  *           type: object
  *           properties:
- *             id:
- *               type: integer
  *             RUT:
  *               type: string
  *             nombre:
