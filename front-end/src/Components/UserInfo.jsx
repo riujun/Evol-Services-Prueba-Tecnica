@@ -276,7 +276,12 @@ function UserInfo() {
                 }
               />
 
-              <label className="block">Cliente ID</label>
+              <label className="block">
+                Cliente ID-
+                {
+                  "(Si no coloca ningun id de cliente este sera el del que esta Selecionado)"
+                }
+              </label>
               <input
                 className="border p-2 w-full"
                 type="text"
