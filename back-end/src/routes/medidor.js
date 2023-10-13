@@ -10,15 +10,6 @@ const {
 
 const router = Router();
 
-router.get("/getMedidores", getMedidores);
-
-router.get("/getMedidor/:id", getMedidorById);
-
-router.post("/createMedidor", createMedidor);
-
-router.put("/updateMedidor/:id", updateMedidor);
-router.delete("/deleteMedidor/:id", deleteMedidor);
-
 /**
  * @swagger
  * /medidor/getMedidores:
@@ -54,6 +45,7 @@ router.delete("/deleteMedidor/:id", deleteMedidor);
  *       500:
  *         description: Error del servidor.
  */
+router.get("/getMedidores", getMedidores);
 
 /**
  * @swagger
@@ -86,6 +78,7 @@ router.delete("/deleteMedidor/:id", deleteMedidor);
  *       '500':
  *         description: Error del servidor.
  */
+router.get("/getMedidor/:id", getMedidorById);
 
 /**
  * @swagger
@@ -125,6 +118,7 @@ router.delete("/deleteMedidor/:id", deleteMedidor);
  *       500:
  *         description: Error del servidor.
  */
+router.post("/createMedidor", createMedidor);
 
 /**
  * @swagger
@@ -165,6 +159,8 @@ router.delete("/deleteMedidor/:id", deleteMedidor);
  *       500:
  *         description: Error del servidor.
  */
+router.put("/updateMedidor/:id", updateMedidor);
+
 /**
  * @swagger
  * /medidores/deleteMedidor/{id}:
@@ -188,4 +184,6 @@ router.delete("/deleteMedidor/:id", deleteMedidor);
  *       500:
  *         description: Error del servidor.
  */
+router.delete("/deleteMedidor/:id", deleteMedidor);
+
 module.exports = router;

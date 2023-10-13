@@ -9,16 +9,6 @@ const {
 } = require("../controllers/users.controllers.js");
 
 const router = Router();
-
-router.get("/getUsers", getUsers);
-router.get("/getUser/:id", getUserById);
-
-router.post("/createUser", createUser);
-
-router.put("/updateUser/:id", updateUser);
-
-router.delete("/deleteUser/:id", deleteUser);
-
 /**
  * @swagger
  * /user/getUsers:
@@ -46,6 +36,8 @@ router.delete("/deleteUser/:id", deleteUser);
  *       500:
  *         description: Error del servidor.
  */
+
+router.get("/getUsers", getUsers);
 
 /**
  * @swagger
@@ -82,6 +74,7 @@ router.delete("/deleteUser/:id", deleteUser);
  *       500:
  *         description: Error del servidor.
  */
+router.get("/getUser/:id", getUserById);
 
 /**
  * @swagger
@@ -116,6 +109,7 @@ router.delete("/deleteUser/:id", deleteUser);
  *       500:
  *         description: Error del servidor.
  */
+router.post("/createUser", createUser);
 
 /**
  * @swagger
@@ -157,6 +151,32 @@ router.delete("/deleteUser/:id", deleteUser);
  *       500:
  *         description: Error del servidor.
  */
+router.put("/updateUser/:id", updateUser);
+
+/**
+ * @swagger
+ * /user/deleteUser/{id}:
+ *   delete:
+ *     summary: Eliminar un usuario por ID.
+ *     description: Elimina un usuario por su ID.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         type: integer
+ *     responses:
+ *       200:
+ *         description: Usuario eliminado con éxito.
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: "Usuario eliminado con éxito"
+ *       404:
+ *         description: Usuario no encontrado.
+ *       500:
+ *         description: Error del servidor.
+ */
+router.delete("/deleteUser/:id", deleteUser);
 
 /**
  * @swagger
